@@ -1,4 +1,3 @@
-using Castle.DynamicProxy;
 using EntertainmentPortal.Logic.Common.Services.Games.Sudoku;
 using EntertainmentPortal.Logic.Services.Games.SudokuServices;
 using FluentValidation;
