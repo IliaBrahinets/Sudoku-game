@@ -9,9 +9,9 @@ import { SudokuGameStatisticsService } from './services/sudoku-game-statistics.s
 })
 export class SudokuGameStatisticsComponent implements OnInit {
 
-  private topPlayers: User[] = new Array<User>();
+  public topPlayers: User[] = new Array<User>();
 
-  currentPlayer: User = null;
+  public currentPlayer: User = null;
 
   constructor(private service: SudokuGameStatisticsService) {
 

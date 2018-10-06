@@ -9,8 +9,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./user-details.component.scss']
 })
 export class UserDetailsComponent {
-  private isDisplay: boolean;
-  private currentUser: User;
+  public isDisplay: boolean;
+  public currentUser: User;
 
   constructor(private userService: UserService,
               private route: ActivatedRoute,

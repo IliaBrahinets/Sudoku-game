@@ -10,7 +10,7 @@ import { SudokuStartGameService } from '../../sudoku-start-game/services/sudoku-
   styleUrls: ['./user-logup.component.scss']
 })
 export class UserLogUpComponent implements OnInit {
-  private user: UserLogUpRequest = new UserLogUpRequest('');
+  public user: UserLogUpRequest = new UserLogUpRequest('');
 
   constructor(private userService: UserService,
               private startGameService: SudokuStartGameService,

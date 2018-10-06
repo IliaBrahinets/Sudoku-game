@@ -19,11 +19,11 @@ export class SudokuBoardComponent implements OnInit {
 
   private cellEmptyValue: number = Cell.EmptyValue;
 
-  private cells: Cell[][] = new Array<Array<Cell>>(9);
+  public cells: Cell[][] = new Array<Array<Cell>>(9);
 
   private selectedCell: Cell = new Cell(-1, -1, -1, Cell.EmptyValue, false);
 
-  private boardStatus: BoardStatus;
+  public boardStatus: BoardStatus;
 
   private playerBoard: PlayerBoard;
 
@@ -56,14 +56,14 @@ export class SudokuBoardComponent implements OnInit {
     });
   }
 
-  private resetBoard() {
+  public resetBoard() {
     this.boardService.resetBoard(this.playerBoard.BoardId).subscribe(board => {
       this.playerBoard = board;
       this.initBoardViewRepresentation(this.playerBoard);
     });
   }
 
-  private boardKeyDown(event: KeyboardEvent) {
+  public boardKeyDown(event: KeyboardEvent) {
     this.handlingNumberInput(event);
     this.movePointerKeyBoardButtonsHandler(event);
   }
@@ -106,13 +106,13 @@ export class SudokuBoardComponent implements OnInit {
     this.router.navigate([finishURL], {relativeTo: this.route});
   }
 
-  private newGame() {
+  public newGame() {
     const newURL = '../../startGame/newGame';
     this.router.navigate([newURL], {relativeTo: this.route});
   }
 
   // MovingPointer
-  private movePointerClickHandler(event) {
+  public movePointerClickHandler(event) {
     const actualTarget: HTMLElement = event.target.parentElement;
 
     let X: number;
@@ -158,7 +158,7 @@ export class SudokuBoardComponent implements OnInit {
   }
 
   // Some Helpers
-  private isSelectedCell(cell: Cell): boolean {
+  public isSelectedCell(cell: Cell): boolean {
     return cell.XCoordinate === this.selectedCell.XCoordinate
         && cell.YCoordinate === this.selectedCell.YCoordinate;
   }

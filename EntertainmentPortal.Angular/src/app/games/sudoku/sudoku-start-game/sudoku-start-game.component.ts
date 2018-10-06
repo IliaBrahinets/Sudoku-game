@@ -12,8 +12,8 @@ import { PlayerBoard } from '../sudoku-board/models/player-board';
 })
 export class SudokuStartGameComponent implements OnInit {
 
-  private difficultyLevels: string[] = new Array<string>();
-  private request: StartGameRequest = new StartGameRequest('');
+  public difficultyLevels: string[] = new Array<string>();
+  public request: StartGameRequest = new StartGameRequest('');
 
   constructor(private service: SudokuStartGameService,
               private router: Router,
