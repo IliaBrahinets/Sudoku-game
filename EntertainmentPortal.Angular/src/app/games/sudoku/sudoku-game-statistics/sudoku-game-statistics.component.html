@@ -1,0 +1,42 @@
+<div class="statistic-container container mt-4">
+  <div class="text-center text-dark currentPlayerStatisticsLabel mb-sm-2"  *ngIf="currentPlayer !== null">Your statistics</div>
+  <div class="table-responsive-sm d-flex" *ngIf="currentPlayer !== null" >
+    <table class="table-borderless currentPlayerResults">
+      <thead>
+        <th>Easy</th>
+        <th>Medium</th>
+        <th>Hard</th>
+        <th>Count</th> 
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{currentPlayer.GamePoints.EasyWinsCount}}</td>
+          <td>{{currentPlayer.GamePoints.MediumWinsCount}}</td>
+          <td>{{currentPlayer.GamePoints.HardWinsCount}}</td>
+          <td>{{currentPlayer.GamePoints.Count}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="text-center text-dark topPlayersLabel mb-sm-2">Top Players</div>
+  <div class="table-responsive-sm d-flex">
+    <table class="table-borderless topPlayersTable">
+      <thead>
+        <th>Name</th>
+        <th>Easy</th>
+        <th>Medium</th>
+        <th>Hard</th>
+        <th>Count</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let player of topPlayers" [class.currentPlayer-inTop] = "currentPlayer !== null && player.PlayerId === currentPlayer.PlayerId" >
+          <td>{{player.Name}}</td>
+          <td>{{player.GamePoints.EasyWinsCount}}</td>
+          <td>{{player.GamePoints.MediumWinsCount}}</td>
+          <td>{{player.GamePoints.HardWinsCount}}</td>
+          <td>{{player.GamePoints.Count}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div (keydown)="boardKeyDown($event)" tabindex="0" id="board-container" class="container d-flex flex-column justify-content-center mt-3">
+    <mat-grid-list id="board" cols="9" rowHeight="1:1" [class.invalid-board] = "boardStatus == 'Invalid'">
+        <div *ngFor="let row of cells">
+            <mat-grid-tile *ngFor="let cell of row" [class.selectedCell]="isSelectedCell(cell)" [class.oddBoardBlock]="cell.BlockNumber | isOdd" [class.evenBoardBlock]="cell.BlockNumber | isEven" [attr.x]="cell.XCoordinate" [attr.y]="cell.YCoordinate" (click)="movePointerClickHandler($event)">
+                {{cell.Value!=cellEmptyValue?cell.Value:""}}
+            </mat-grid-tile>
+        </div>
+    </mat-grid-list>
+</div>
+<div class="text-center">
+
+</div>
+<div class="gameControls container d-flex flex-wrap justify-content-center mb-2 p-2">
+    <button type="button" class="btn btn-outline-info" (click) ="newGame()">New Game</button>
+    <button type="button" class="btn btn-outline-info ml-2" (click)="resetBoard()">Reset</button>
+</div>

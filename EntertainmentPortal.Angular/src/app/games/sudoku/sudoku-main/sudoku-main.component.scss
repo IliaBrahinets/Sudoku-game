@@ -1,0 +1,19 @@
+//Angular-material
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+//bootstrap
+@import '~bootstrap/dist/css/bootstrap.min.css';
+#main-container {
+    min-height: 100vh;
+    background-image: url(./Fon11.jpg);
+}
+header {
+    box-shadow: 0 0 8px 2px var(--main-color);
+}
+
+* {
+    --main-color: #fff6f2;
+}
+
+.bg-main-color {
+    background-color: var(--main-color);
+}

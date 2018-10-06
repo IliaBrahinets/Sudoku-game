@@ -1,0 +1,16 @@
+<div class="h-100 d-flex justify-content-center align-items-center">
+    <div class="form-container">
+        <form (ngSubmit)="onSubmit($event.target)">
+            <div class="form-group">
+                <h2 for="name" id="nameLabel">Your name</h2>
+                <input type="text" class="form-control" name="name" id="name" aria-describedby="nameLabel" placeholder="Enter Name..." [(ngModel)]="user.Name" #name="ngModel" required [class.is-invalid]="name.invalid && (name.dirty || name.touched)" [class.is-valid]="name.valid && (name.dirty || name.touched)">
+                <ng-container *ngIf="name.invalid && (name.dirty || name.touched)">
+                    <div class="invalid-feedback">Name is required.</div>
+                </ng-container>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-outline-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

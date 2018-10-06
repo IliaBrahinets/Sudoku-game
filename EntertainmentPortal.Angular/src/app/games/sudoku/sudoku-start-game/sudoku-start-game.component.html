@@ -1,0 +1,17 @@
+<div class="h-100 d-flex justify-content-center align-items-center">
+    <div class="form-container">
+        <form (ngSubmit)="onSubmit($event.target)">
+            <div class="form-group">
+                <h1 for="difficultyLevel" id="difficultyLevelLabel">Difficulty Level</h1>
+                <select class="" id="difficultyLevel" name="difficultyLevel" size="{{difficultyLevels.length}}" [(ngModel)]="request.LevelName">
+                  <option *ngFor=" let level of difficultyLevels " [ngValue]="level">
+                    {{level}}
+                  </option>
+                </select>
+            </div>
+            <div class="text-center ">
+                <button type="submit " class="btn btn-outline-primary ">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<span class="user-icon user-details" *ngIf="isDisplay">
+    <i class="material-icons">
+        perm_identity
+    </i>
+    <span class="user-name">{{currentUser.Name}}</span>
+<i class="logOut-icon material-icons" role="link" (click)="logOut()">
+        exit_to_app
+</i>
+</span>

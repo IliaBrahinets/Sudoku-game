@@ -1,0 +1,23 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div id="main-container" class="d-flex flex-column justify-content-start align-items-stretch align-content-stretch">
+    <header>
+        <nav class="navbar navbar-light bg-main-color justify-content-between">
+            <div class="col-sm-4"><a class="navbar-brand" [routerLink]="['./topPlayers']">Top Players</a></div>
+            <div class="col-sm-4 text-center"><a class="navbar-brand" [routerLink]="['./']">Sudoku</a></div>
+            <app-user-details class="col-sm-4"></app-user-details>
+        </nav>
+
+    </header>
+    <div class="d-flex flex-grow-1 justify-content-start align-items-stretch align-content-stretch">
+        <div class="flex-grow-1">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <footer class="footer bg-main-color">
+        <div class="text-right">
+            <div class="d-inline-block p-3">
+                Created by Anton Plotnikov and Ilia Brahinets
+            </div>
+        </div>
+    </footer>
+</div>
