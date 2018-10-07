@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SudokuEnvironments } from '../../SudokuEnvironments';
+import { SudokuEnvironments } from '../../sudokuenvironments';
 import { StartGameRequest } from '../models/start-game-request';
 import { Observable } from 'rxjs';
 import { PlayerBoard } from '../../sudoku-board/models/player-board';

@@ -1,3 +1,3 @@
 export const SudokuEnvironments = {
-    apiUrl: 'http://sudokugame.azurewebsites.net/api/sudokuGame'
+    apiUrl: 'https://sudokugame.azurewebsites.net/api/sudokuGame/'
 };

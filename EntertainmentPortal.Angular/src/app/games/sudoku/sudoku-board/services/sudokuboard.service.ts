@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Cell } from 'src/app/games/sudoku/sudoku-board/models/cell';
 import { Observable } from 'rxjs';
-import { SudokuEnvironments } from '../../SudokuEnvironments';
+import { SudokuEnvironments } from '../../sudokuenvironments';
 import { BoardStatus } from '../models/board-status.enum';
 import { UpdateCellRequest } from '../models/update-cell-request';
 import { PlayerBoard } from '../models/player-board';

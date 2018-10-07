@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 import { UserLogUpRequest } from '../models/user-logup-request';
 import { User } from '../models/user';
 import { Observable } from 'rxjs/internal/Observable';
-import { SudokuEnvironments } from '../../SudokuEnvironments';
+import { SudokuEnvironments } from '../../sudokuenvironments';
 import { Observer } from 'rxjs';
 
 @Injectable({
