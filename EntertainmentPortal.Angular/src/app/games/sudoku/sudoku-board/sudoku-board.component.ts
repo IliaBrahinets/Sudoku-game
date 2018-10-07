@@ -23,7 +23,7 @@ export class SudokuBoardComponent implements OnInit {
 
   private selectedCell: Cell = new Cell(-1, -1, -1, Cell.EmptyValue, false);
 
-  public boardStatus: BoardStatus;
+  public boardStatus: BoardStatus = BoardStatus.InProgress;
 
   private playerBoard: PlayerBoard;
 
