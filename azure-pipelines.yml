@@ -38,4 +38,4 @@ steps:
     azureSubscription: 'Оплата по мере использования(be3ad519-fc47-41cf-9164-543506a4fd1d)'
     appType: 'webApp'
     WebAppName: 'sudokugame'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/a/*.zip'
