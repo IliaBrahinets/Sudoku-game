@@ -17,42 +17,10 @@ namespace EntertainmentPortal.DataAccess.Context
     [DbConfigurationType(typeof(SudokuContextConfiguration))]
     public class SudokuContext : DbContext
     {
-        private const string _connectionName = "SudokuConnection";
-        private const string _configFileName = "EntertainmentPortal.DataAccess.dll.config";
-        private static readonly string _connectionString;
-
-        /// <summary>
-        /// Static constructor of a <see cref="SudokuContext"/>.
-        /// </summary>
-        /// <exception cref="ConfigurationErrorsException">Connection string is null or empty</exception>
-        static SudokuContext()
-        {
-            var codeBase = Assembly.GetExecutingAssembly().CodeBase;
-            var uri = new UriBuilder(codeBase);
-            string path = Uri.UnescapeDataString(uri.Path);
-            string fullCfgFileName = $@"{Path.GetDirectoryName(path)}\{_configFileName}";
-
-            var configMap = new ExeConfigurationFileMap() { ExeConfigFilename = fullCfgFileName };
-            var config = ConfigurationManager.OpenMappedExeConfiguration(configMap, ConfigurationUserLevel.None);
-            foreach (ConnectionStringSettings connectionString in config.ConnectionStrings.ConnectionStrings)
-            {
-                if (connectionString.Name.Equals(_connectionName, StringComparison.OrdinalIgnoreCase))
-                {
-                    _connectionString = connectionString.ConnectionString;
-                    break;
-                }
-            }
-
-            if (string.IsNullOrEmpty(_connectionString))
-            {
-                throw new ConfigurationErrorsException($"Cannot find connection string with name {_connectionName}");
-            }
-        }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="SudokuContext"/>.
         /// </summary>
-        public SudokuContext() : base(_connectionString)
+        public SudokuContext(SudokuContextParameters param) : base(param?.ConnectionString)
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<SudokuContext, SudokuConfiguration>(true));
         }

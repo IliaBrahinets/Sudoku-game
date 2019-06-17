@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Configuration;
 using System.Linq;
 using System.Reflection;
+using System.Web.Configuration;
 using System.Web.Http;
 using AutoMapper;
 using FluentValidation;
@@ -21,6 +23,7 @@ namespace EntertainmentPortal.Web
 
             container.RegisterPackages(GetAssemblies());
 
+            RegisterConfiguration(container);
             MapperSetup(container);
             ValidationSetup(config, container);
             LoggerSetup(container);
@@ -28,6 +31,14 @@ namespace EntertainmentPortal.Web
             container.RegisterWebApiControllers(config);
             container.Verify(VerificationOption.VerifyOnly);
             config.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
+        }
+
+        private static void RegisterConfiguration(Container container)
+        {
+            container.Register<Configuration>(() =>
+            {
+                return WebConfigurationManager.OpenWebConfiguration("/");
+            }, Lifestyle.Singleton);
         }
 
         private static Assembly[] GetAssemblies()
