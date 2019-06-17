@@ -24,6 +24,7 @@ import { SudokuFinishGameComponent } from './sudoku-finish-game/sudoku-finish-ga
 import { SudokuStartFromUnfinishedGameComponent } from './sudoku-start-game/sudoku-start-from-unfinished-game/sudoku-start-from-unfinished-game.component';
 import { SudokuGameStatisticsComponent } from './sudoku-game-statistics/sudoku-game-statistics.component';
 import { SudokuGameStatisticsService } from './sudoku-game-statistics/services/sudoku-game-statistics.service';
+import { NgxLoadingModule } from 'ngx-loading';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { SudokuGameStatisticsService } from './sudoku-game-statistics/services/s
     SudokuRoutingModule,
     NumberHelpersModule,
     AngularMaterialImports,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxLoadingModule.forRoot({}),
   ],
   providers : [
     // Angular providers

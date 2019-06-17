@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotificationsService, SimpleNotificationsModule } from '../../node_modules/angular2-notifications';
 import { SudokuModule } from './games/sudoku/sudoku.module';
+import { NgxLoadingModule } from 'ngx-loading';
 
 @NgModule({
   declarations: [
