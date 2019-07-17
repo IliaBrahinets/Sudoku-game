@@ -1,7 +1,7 @@
 <div (keydown)="boardKeyDown($event)" tabindex="0" id="board-container" class="container d-flex flex-column justify-content-center mt-3">
     <mat-grid-list id="board" cols="9" rowHeight="1:1" [class.invalid-board] = "boardStatus.toString() == 'Invalid'">
         <div *ngFor="let row of cells">
-            <mat-grid-tile *ngFor="let cell of row" [class.selectedCell]="isSelectedCell(cell)" [class.oddBoardBlock]="cell.BlockNumber | isOdd" [class.evenBoardBlock]="cell.BlockNumber | isEven" [attr.x]="cell.XCoordinate" [attr.y]="cell.YCoordinate" (click)="movePointerClickHandler($event)">
+            <mat-grid-tile *ngFor="let cell of row" [class.constCell] = "cell.IsConst" [class.selectedCell]="isSelectedCell(cell)" [class.oddBoardBlock]="cell.BlockNumber | isOdd" [class.evenBoardBlock]="cell.BlockNumber | isEven" [attr.x]="cell.XCoordinate" [attr.y]="cell.YCoordinate" (click)="movePointerClickHandler($event)">
                 {{cell.Value!=cellEmptyValue?cell.Value:""}}
             </mat-grid-tile>
         </div>
